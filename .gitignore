@@ -43,8 +43,7 @@ yarn-error.log*
 next-env.d.ts
 
 # data acquisition tools (not needed in prod)
-data_acquisition/.venv/
-data_acquisition/__pycache__/
+data_acquisition/
 
 # IDE
 .idea/

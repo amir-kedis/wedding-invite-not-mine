@@ -1,1 +1,0 @@
-importScripts('https://github.githubassets.com/assets/find-file-worker-742b41342e9c3630.js')
