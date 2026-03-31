@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ===== Amiri Arabic Font ===== */
+@font-face {
+  font-family: "Amiri";
+  src: url("/fonts/Amiri-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Theme Tokens (Tailwind v4) ===== */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-sage: hsl(var(--sage));
+  --color-sage-dark: hsl(var(--sage-dark));
+  --color-sage-light: hsl(var(--sage-light));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-ring: hsl(var(--ring));
+  --color-gold: #c9a84c;
+
+  --font-script: var(--font-script-family);
+  --font-display: var(--font-display-family);
+  --font-body: var(--font-body-family);
+
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-bounce-gentle: bounce-gentle 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* ===== CSS Custom Properties ===== */
+:root {
+  --primary: 0 0% 0%;
+  --primary-foreground: 40 33% 97%;
+  --ring: 0 0% 0%;
+  --sage: 0 0% 20%;
+  --sage-dark: 0 0% 0%;
+  --sage-light: 0 0% 50%;
+  --border: 0 0% 80%;
+  --input: 0 0% 80%;
+  --secondary: 0 0% 92%;
+  --secondary-foreground: 0 0% 30%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 45%;
+  --card: 0 5% 95%;
+  --card-foreground: 0 0% 25%;
+  --foreground: 0 0% 25%;
+  --background: 40 33% 97%;
+  --popover: 40 33% 97%;
+  --popover-foreground: 0 0% 25%;
+  --illustration-hue: -30deg;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: hidden;
+}
+
+/* ===== Section Padding Utility ===== */
+.section-padding {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 7rem 2rem;
+  }
+}
+
+/* ===== Hide Video Controls ===== */
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+}
+
+/* ===== Signature Canvas ===== */
+.signature-canvas {
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* ===== Selection Color ===== */
+::selection {
+  background: hsl(var(--sage) / 0.2);
+  color: hsl(var(--sage-dark));
+}

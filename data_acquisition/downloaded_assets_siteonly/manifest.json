@@ -1,0 +1,105 @@
+{
+  "source_url": "https://our.weddingg.co/omar-salma-template",
+  "captured_at": 1774888884,
+  "all_origins": false,
+  "total_discovered": 201,
+  "total_candidate_assets": 16,
+  "assets": [
+    {
+      "url": "https://our.weddingg.co/assets/Amiri-Regular-DuMToiWY.ttf",
+      "path": "our.weddingg.co/assets/Amiri-Regular-DuMToiWY.ttf",
+      "status": "downloaded",
+      "bytes": 431116
+    },
+    {
+      "url": "https://our.weddingg.co/assets/index-4r-5uIqO.js",
+      "path": "our.weddingg.co/assets/index-4r-5uIqO.js",
+      "status": "downloaded",
+      "bytes": 2597556
+    },
+    {
+      "url": "https://our.weddingg.co/assets/index-B9MxKMJ9.css",
+      "path": "our.weddingg.co/assets/index-B9MxKMJ9.css",
+      "status": "downloaded",
+      "bytes": 125318
+    },
+    {
+      "url": "https://our.weddingg.co/assets/venue-illustration-B9VKTKcW.png",
+      "path": "our.weddingg.co/assets/venue-illustration-B9VKTKcW.png",
+      "status": "downloaded",
+      "bytes": 1692033
+    },
+    {
+      "url": "https://our.weddingg.co/bg-ezgif.com-video-to-gif-converter.gif",
+      "path": "our.weddingg.co/bg-ezgif.com-video-to-gif-converter.gif",
+      "status": "downloaded",
+      "bytes": 5218287
+    },
+    {
+      "url": "https://our.weddingg.co/bg.mp4",
+      "path": "our.weddingg.co/bg.mp4",
+      "status": "downloaded",
+      "bytes": 1980025
+    },
+    {
+      "url": "https://our.weddingg.co/bg.png",
+      "path": "our.weddingg.co/bg.png",
+      "status": "downloaded",
+      "bytes": 966451
+    },
+    {
+      "url": "https://our.weddingg.co/bg.webm",
+      "path": "our.weddingg.co/bg.webm",
+      "status": "downloaded",
+      "bytes": 1911909
+    },
+    {
+      "url": "https://our.weddingg.co/camera-frame.png",
+      "path": "our.weddingg.co/camera-frame.png",
+      "status": "downloaded",
+      "bytes": 90263
+    },
+    {
+      "url": "https://our.weddingg.co/favicon.ico",
+      "path": "our.weddingg.co/favicon.ico",
+      "status": "downloaded",
+      "bytes": 99214
+    },
+    {
+      "url": "https://our.weddingg.co/push-sw.js",
+      "path": "our.weddingg.co/push-sw.js",
+      "status": "downloaded",
+      "bytes": 1029
+    },
+    {
+      "url": "https://our.weddingg.co/pwa-192x192.png",
+      "path": "our.weddingg.co/pwa-192x192.png",
+      "status": "downloaded",
+      "bytes": 50809
+    },
+    {
+      "url": "https://our.weddingg.co/pwa-512x512.png",
+      "path": "our.weddingg.co/pwa-512x512.png",
+      "status": "downloaded",
+      "bytes": 39659
+    },
+    {
+      "url": "https://our.weddingg.co/registerSW.js",
+      "path": "our.weddingg.co/registerSW.js",
+      "status": "downloaded",
+      "bytes": 134
+    },
+    {
+      "url": "https://our.weddingg.co/sw.js",
+      "path": "our.weddingg.co/sw.js",
+      "status": "downloaded",
+      "bytes": 1964
+    },
+    {
+      "url": "https://our.weddingg.co/~flock.js",
+      "path": "our.weddingg.co/~flock.js",
+      "status": "downloaded",
+      "bytes": 21296
+    }
+  ]
+}
