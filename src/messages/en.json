@@ -1,0 +1,57 @@
+{
+  "envelope": {
+    "dear": "Dear",
+    "guest": "Guest",
+    "tapToOpen": "Tap to open"
+  },
+  "hero": {
+    "gettingMarried": "We're Getting Married",
+    "confirmAttendance": "Confirm Your Attendance"
+  },
+  "countdown": {
+    "title": "Countdown",
+    "subtitle": "To the big day",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "programme": {
+    "title": "Day Programme",
+    "subtitle": "What we have planned for you"
+  },
+  "details": {
+    "title": "Day Details",
+    "subtitle": "Everything you need to know",
+    "location": "Location",
+    "openInMaps": "Open in Maps",
+    "addToCalendar": "Add to Calendar",
+    "loadingMap": "Loading map..."
+  },
+  "rsvp": {
+    "title": "Confirm your attendance",
+    "subtitle": "We hope to count on you",
+    "fullName": "Full name",
+    "willAttend": "Will you attend?",
+    "yesAttend": "Yes, I'll be there! 🎉",
+    "noAttend": "Sorry, I can't make it 😢",
+    "message": "Message for the couple",
+    "messagePlaceholder": "Write a message...",
+    "signature": "Signature",
+    "submit": "Send Confirmation",
+    "namePlaceholder": "Your name",
+    "success": "Thank you for your response!",
+    "error": "Something went wrong. Please try again."
+  },
+  "guestbook": {
+    "title": "Guestbook",
+    "subtitle": "Messages from our loved ones"
+  },
+  "footer": {
+    "withLove": "With all our love"
+  },
+  "music": {
+    "play": "Play music",
+    "pause": "Pause music"
+  }
+}

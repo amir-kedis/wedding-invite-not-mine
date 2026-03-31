@@ -1,0 +1,57 @@
+{
+  "envelope": {
+    "dear": "عزيزي",
+    "guest": "الضيف",
+    "tapToOpen": "اضغط لفتح الدعوة"
+  },
+  "hero": {
+    "gettingMarried": "سنتزوج",
+    "confirmAttendance": "أكّد حضورك"
+  },
+  "countdown": {
+    "title": "العد التنازلي",
+    "subtitle": "لليوم الكبير",
+    "days": "يوم",
+    "hours": "ساعة",
+    "minutes": "دقيقة",
+    "seconds": "ثانية"
+  },
+  "programme": {
+    "title": "برنامج اليوم",
+    "subtitle": "ما خططناه لكم"
+  },
+  "details": {
+    "title": "تفاصيل اليوم",
+    "subtitle": "كل ما تحتاج معرفته",
+    "location": "الموقع",
+    "openInMaps": "افتح في الخريطة",
+    "addToCalendar": "أضف إلى التقويم",
+    "loadingMap": "جاري تحميل الخريطة..."
+  },
+  "rsvp": {
+    "title": "أكّد حضورك",
+    "subtitle": "نأمل أن نحظى بوجودك",
+    "fullName": "الاسم الكامل",
+    "willAttend": "هل ستحضر؟",
+    "yesAttend": "نعم، سأحضر! 🎉",
+    "noAttend": "آسف، لن أتمكن 😢",
+    "message": "رسالة للعروسين",
+    "messagePlaceholder": "اكتب رسالة...",
+    "signature": "التوقيع",
+    "submit": "إرسال التأكيد",
+    "namePlaceholder": "اسمك",
+    "success": "شكراً لك على ردك!",
+    "error": "حدث خطأ. يرجى المحاولة مرة أخرى."
+  },
+  "guestbook": {
+    "title": "دفتر الضيوف",
+    "subtitle": "رسائل من أحبائنا"
+  },
+  "footer": {
+    "withLove": "مع كل حبنا"
+  },
+  "music": {
+    "play": "تشغيل الموسيقى",
+    "pause": "إيقاف الموسيقى"
+  }
+}
