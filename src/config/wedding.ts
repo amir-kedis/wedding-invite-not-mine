@@ -23,63 +23,47 @@ export const weddingConfig = {
   },
 
   /** ISO 8601 date string with timezone */
-  date: "2027-05-08T19:30:00+02:00",
+  date: "2026-04-17T18:00:00+02:00",
 
   venue: {
-    name: { en: "Venue Name", ar: "اسم القاعة" },
-    time: { en: "From 7:30 PM to 1:00 AM", ar: "من ٧:٣٠ م إلى ١:٠٠ ص" },
-    mapsUrl: "https://maps.app.goo.gl/VsUmFxJQi1iamZu17",
+    name: { en: "Lokoumet Gould El Nael", ar: "لوكيمة جولد النيل" },
+    time: { en: "From 6:00 PM onwards", ar: "من ٦:٠٠ م فصاعدًا" },
+    mapsUrl: "https://maps.app.goo.gl/nTjZhXvd4jzQFZdN9",
     embedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.4416289581713!2d31.322491199999998!3d30.0815359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f16497ea82f%3A0x4ff178b68124d1da!2z2YLYp9i52Kkg2K3Zitin2Kkg2YTZhNin2YHYsdin2K0g2KjYr9in2LEg2KfZhNmC2YjYp9iqINin2YTYrNmI2YrYqQ!5e0!3m2!1sen!2seg!4v1773102531685!5m2!1sen!2seg",
+      "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3450.777190417625!2d31.192062377929688!3d30.129188537597656!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14586be319fb4cbf%3A0x843d67626b087a10!2z2YTZiNmD2YrYtNmGINis2YjZhNivINmG2KfZitmE!5e0!3m2!1sen!2seg!4v1775221939519!5m2!1sen!2seg",
   },
 
   schedule: [
     {
-      time: { en: "7:30 PM", ar: "٧:٣٠ م" },
+      time: { en: "6:00 PM", ar: "٦:٠٠ م" },
       title: { en: "Guest Arrival", ar: "وصول الضيوف" },
       description: {
-        en: "Reception and welcome at the venue",
+        en: "Welcome and reception at the venue",
         ar: "استقبال وترحيب في القاعة",
       },
     },
     {
+      time: { en: "6:30 PM", ar: "٦:٣٠ م" },
+      title: { en: "Engagement Ceremony", ar: "حفل الخطوبة" },
+      description: {
+        en: "The ring exchange and the beginning of a beautiful journey",
+        ar: "تبادل الخواتم وبداية رحلة جميلة",
+      },
+    },
+    {
+      time: { en: "7:30 PM", ar: "٧:٣٠ م" },
+      title: { en: "Photos & Celebration", ar: "صور واحتفال" },
+      description: {
+        en: "Capture memories from this special occasion",
+        ar: "التقاط ذكريات من هذه المناسبة الرائعة",
+      },
+    },
+    {
       time: { en: "8:00 PM", ar: "٨:٠٠ م" },
-      title: { en: "Wedding Ceremony", ar: "حفل الزفاف" },
+      title: { en: "Dinner & Music", ar: "عشاء وموسيقى" },
       description: {
-        en: "The most special moment of the day",
-        ar: "أجمل لحظة في اليوم",
-      },
-    },
-    {
-      time: { en: "9:30 PM", ar: "٩:٣٠ م" },
-      title: { en: "Wedding Photos", ar: "صور الزفاف" },
-      description: {
-        en: "Leave a memory for our special day",
-        ar: "اتركوا ذكرى ليومنا المميز",
-      },
-    },
-    {
-      time: { en: "10:00 PM", ar: "١٠:٠٠ م" },
-      title: { en: "Banquet Dinner", ar: "حفل العشاء" },
-      description: {
-        en: "Dinner and celebration with family and friends",
-        ar: "عشاء واحتفال مع العائلة والأصدقاء",
-      },
-    },
-    {
-      time: { en: "10:45 PM", ar: "١٠:٤٥ م" },
-      title: { en: "Party & Dancing", ar: "حفلة ورقص" },
-      description: {
-        en: "Dance and celebrate together on the dance floor",
-        ar: "ارقصوا واحتفلوا معًا على حلبة الرقص",
-      },
-    },
-    {
-      time: { en: "12:30 AM", ar: "١٢:٣٠ ص" },
-      title: { en: "End of Celebration", ar: "نهاية الاحتفال" },
-      description: {
-        en: "Farewell and beautiful memories to remember",
-        ar: "وداع وذكريات جميلة نتذكرها",
+        en: "Dinner, music, and dancing with family and friends",
+        ar: "عشاء وموسيقى ورقص مع العائلة والأصدقاء",
       },
     },
   ] as ScheduleEvent[],
@@ -89,12 +73,12 @@ export const weddingConfig = {
     envelope: true,
     hero: true,
     countdown: true,
-    programme: true,
+    programme: false,
     details: true,
-    dressCode: true,
+    dressCode: false,
     rsvp: true,
     guestbook: true,
-    music: true,
+    music: false,
   },
 
   dressCode: {
@@ -149,13 +133,13 @@ export const weddingConfig = {
       locale === "ar"
         ? `${c.partner1.ar} و ${c.partner2.ar}`
         : `${c.partner1.en} & ${c.partner2.en}`;
-    const title = encodeURIComponent(`Wedding — ${name}`);
+    const title = encodeURIComponent(`Engagement — ${name}`);
     const venue = encodeURIComponent(
       locale === "ar"
         ? weddingConfig.venue.name.ar
         : weddingConfig.venue.name.en
     );
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20270508T193000/20270509T010000&location=${venue}`;
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260417T160000Z/20260417T220000Z&location=${venue}`;
   },
 } as const;
 

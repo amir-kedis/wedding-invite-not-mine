@@ -5,7 +5,7 @@
     "tapToOpen": "اضغط لفتح الدعوة"
   },
   "hero": {
-    "gettingMarried": "سنتزوج",
+    "gettingMarried": "سنحتفل بخطوبتنا",
     "confirmAttendance": "أكّد حضورك"
   },
   "countdown": {
@@ -35,7 +35,7 @@
     "willAttend": "هل ستحضر؟",
     "yesAttend": "نعم، سأحضر! 🎉",
     "noAttend": "آسف، لن أتمكن 😢",
-    "message": "رسالة للعروسين",
+    "message": "رسالة للخطيبين",
     "messagePlaceholder": "اكتب رسالة...",
     "signature": "التوقيع",
     "submit": "إرسال التأكيد",
