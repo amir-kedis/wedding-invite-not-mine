@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { weddingConfig } from "@/config/wedding";
+
+type Phase = "sealed" | "playing" | "done";
 
 export default function EnvelopeGate({
   onOpen,
@@ -11,18 +13,33 @@ export default function EnvelopeGate({
   onOpen: () => void;
 }) {
   const t = useTranslations("envelope");
-  const [phase, setPhase] = useState<"sealed" | "playing">("sealed");
+  const [phase, setPhase] = useState<Phase>("sealed");
+  const [showSkip, setShowSkip] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const calledRef = useRef(false);
+  const openedRef = useRef(false);
 
   const triggerOpen = useCallback(() => {
-    if (calledRef.current) return;
-    calledRef.current = true;
+    if (openedRef.current) return;
+    openedRef.current = true;
+    setPhase("done");
     onOpen();
   }, [onOpen]);
 
+  // Show skip button after 1.5s once video is playing
+  useEffect(() => {
+    if (phase !== "playing") return;
+    const t = setTimeout(() => setShowSkip(true), 1500);
+    return () => clearTimeout(t);
+  }, [phase]);
+
   const handleClick = useCallback(() => {
+    // If video is already playing — treat as "skip"
+    if (phase === "playing") {
+      triggerOpen();
+      return;
+    }
     if (phase !== "sealed") return;
+
     setPhase("playing");
 
     const video = videoRef.current;
@@ -31,22 +48,29 @@ export default function EnvelopeGate({
       return;
     }
 
-    // Listen for video end — triggers once then auto-removes
-    video.addEventListener("ended", triggerOpen, { once: true });
+    // Safety timeout — navigate after 6s no matter what
+    const fallback = setTimeout(triggerOpen, 6000);
 
-    // Fallback: if video fails or takes too long, navigate anyway
-    const fallback = setTimeout(triggerOpen, 8000);
-    video.addEventListener("ended", () => clearTimeout(fallback), { once: true });
+    video.addEventListener(
+      "ended",
+      () => {
+        clearTimeout(fallback);
+        triggerOpen();
+      },
+      { once: true }
+    );
 
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
-        // Autoplay blocked — just transition after a short delay
+        // Browser blocked autoplay — skip after short delay
         clearTimeout(fallback);
-        setTimeout(triggerOpen, 800);
+        setTimeout(triggerOpen, 600);
       });
     }
   }, [phase, triggerOpen]);
+
+  if (phase === "done") return null;
 
   return (
     <motion.div
@@ -55,7 +79,7 @@ export default function EnvelopeGate({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* The video is always mounted so it preloads — hidden behind the image overlay */}
+      {/* Video always mounted — preloads in background */}
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
@@ -69,14 +93,14 @@ export default function EnvelopeGate({
         <source src={weddingConfig.media.envelopeVideo} type="video/mp4" />
       </video>
 
-      {/* Image + UI overlay — fades out when playing starts */}
+      {/* Static image overlay — hidden once video starts */}
       <AnimatePresence>
         {phase === "sealed" && (
           <motion.div
-            key="sealed-overlay"
+            key="sealed"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
             className="absolute inset-0 z-10 pointer-events-none"
           >
             <img
@@ -85,7 +109,7 @@ export default function EnvelopeGate({
               className="absolute inset-0 w-full h-full object-cover"
             />
 
-            {/* Dear Guest header */}
+            {/* Dear Guest */}
             <div className="absolute top-8 inset-x-0 text-center">
               <p className="text-black/60 text-xs tracking-[0.4em] uppercase mb-1 font-sans">
                 {t("dear")}
@@ -95,7 +119,7 @@ export default function EnvelopeGate({
               </p>
             </div>
 
-            {/* Tap to open indicator */}
+            {/* Tap to open */}
             <div className="absolute inset-x-0 bottom-16 flex flex-col items-center gap-3">
               <div className="relative flex items-center justify-center">
                 <div
@@ -114,6 +138,24 @@ export default function EnvelopeGate({
                 {t("tapToOpen")}
               </p>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Skip button — appears after 1.5s of video playing */}
+      <AnimatePresence>
+        {phase === "playing" && showSkip && (
+          <motion.div
+            key="skip"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="absolute bottom-10 inset-x-0 z-20 flex justify-center pointer-events-none"
+          >
+            <span className="text-white/60 text-xs tracking-[0.3em] uppercase font-sans">
+              Tap to skip
+            </span>
           </motion.div>
         )}
       </AnimatePresence>
