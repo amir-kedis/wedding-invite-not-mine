@@ -26,7 +26,7 @@ export const weddingConfig = {
   date: "2026-04-17T18:00:00+02:00",
 
   venue: {
-    name: { en: "Lokoumet Gould El Nael", ar: "لوكيمة جولد النيل" },
+    name: { en: "Gold Nile", ar: "جولد النيل" },
     time: { en: "From 6:00 PM onwards", ar: "من ٦:٠٠ م فصاعدًا" },
     mapsUrl: "https://maps.app.goo.gl/nTjZhXvd4jzQFZdN9",
     embedUrl:
@@ -87,9 +87,9 @@ export const weddingConfig = {
   },
 
   media: {
-    envelopeVideo: "https://github.com/kkhh-hub/assets/raw/refs/heads/main/intro.mp4",
+    envelopeVideo: "/media/intro.mp4",
     envelopeVideoWebm: "",
-    envelopeImage: "https://raw.githubusercontent.com/kkhh-hub/assets/main/intro.jpg",
+    envelopeImage: "/media/intro.jpg",
     heroVideo: "/media/bg.mp4",
     heroVideoWebm: "/media/bg.webm",
     heroPoster: "/media/bg.png",
