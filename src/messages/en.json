@@ -45,7 +45,10 @@
   },
   "guestbook": {
     "title": "Guestbook",
-    "subtitle": "Messages from our loved ones"
+    "subtitle": "Messages from our loved ones",
+    "attending": "Attending",
+    "notAttending": "Not attending",
+    "noMessage": "No message left"
   },
   "footer": {
     "withLove": "With all our love"

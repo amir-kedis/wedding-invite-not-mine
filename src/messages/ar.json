@@ -45,7 +45,10 @@
   },
   "guestbook": {
     "title": "دفتر الضيوف",
-    "subtitle": "رسائل من أحبائنا"
+    "subtitle": "رسائل من أحبائنا",
+    "attending": "سيحضر",
+    "notAttending": "لن يحضر",
+    "noMessage": "لم يترك رسالة"
   },
   "footer": {
     "withLove": "مع كل حبنا"

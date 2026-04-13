@@ -77,7 +77,7 @@ export const weddingConfig = {
     details: true,
     dressCode: false,
     rsvp: true,
-    guestbook: false,
+    guestbook: true,
     music: false,
   },
 

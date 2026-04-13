@@ -8,7 +8,8 @@ import { Heart, Quote } from "lucide-react";
 interface GuestEntry {
   id: string;
   full_name: string;
-  message: string;
+  message: string | null;
+  attending: boolean;
   signature_data?: string;
   created_at: string;
 }
@@ -16,6 +17,14 @@ interface GuestEntry {
 export default function GuestbookSection() {
   const t = useTranslations("guestbook");
   const [entries, setEntries] = useState<GuestEntry[]>([]);
+
+  const attendingLabel = t.has("attending") ? t("attending") : "Attending";
+  const notAttendingLabel = t.has("notAttending")
+    ? t("notAttending")
+    : "Not attending";
+  const noMessageLabel = t.has("noMessage")
+    ? t("noMessage")
+    : "No message left";
 
   useEffect(() => {
     fetch("/api/rsvp")
@@ -53,7 +62,9 @@ export default function GuestbookSection() {
             >
               <Quote className="w-8 h-8 text-sage/20 mb-2" />
               <p className="font-[family-name:var(--font-display-family)] text-sm text-foreground italic mb-4 leading-relaxed">
-                &ldquo;{entry.message}&rdquo;
+                {entry.message?.trim()
+                  ? `\u201c${entry.message}\u201d`
+                  : noMessageLabel}
               </p>
               {entry.signature_data && (
                 <img
@@ -66,6 +77,17 @@ export default function GuestbookSection() {
                 <Heart className="w-3.5 h-3.5 text-sage-dark fill-sage-dark" />
                 <span className="font-sans text-sage-dark font-medium">
                   {entry.full_name}
+                </span>
+              </div>
+              <div className="mt-3">
+                <span
+                  className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-sans font-medium ${
+                    entry.attending
+                      ? "bg-emerald-100 text-emerald-800"
+                      : "bg-rose-100 text-rose-800"
+                  }`}
+                >
+                  {entry.attending ? attendingLabel : notAttendingLabel}
                 </span>
               </div>
             </motion.div>
