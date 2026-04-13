@@ -23,11 +23,11 @@ export const weddingConfig = {
   },
 
   /** ISO 8601 date string with timezone */
-  date: "2026-04-17T18:00:00+02:00",
+  date: "2026-04-17T19:00:00+02:00",
 
   venue: {
     name: { en: "Gold Nile", ar: "جولد النيل" },
-    time: { en: "From 6:00 PM onwards", ar: "من ٦:٠٠ م فصاعدًا" },
+    time: { en: "From 7:00 PM onwards", ar: "من ٧:٠٠ م فصاعدًا" },
     mapsUrl: "https://maps.app.goo.gl/nTjZhXvd4jzQFZdN9",
     embedUrl:
       "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3450.777190417625!2d31.192062377929688!3d30.129188537597656!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14586be319fb4cbf%3A0x843d67626b087a10!2z2YTZiNmD2YrYtNmGINis2YjZhNivINmG2KfZitmE!5e0!3m2!1sen!2seg!4v1775221939519!5m2!1sen!2seg",
@@ -35,7 +35,7 @@ export const weddingConfig = {
 
   schedule: [
     {
-      time: { en: "6:00 PM", ar: "٦:٠٠ م" },
+      time: { en: "7:00 PM", ar: "٧:٠٠ م" },
       title: { en: "Guest Arrival", ar: "وصول الضيوف" },
       description: {
         en: "Welcome and reception at the venue",
@@ -43,7 +43,7 @@ export const weddingConfig = {
       },
     },
     {
-      time: { en: "6:30 PM", ar: "٦:٣٠ م" },
+      time: { en: "7:30 PM", ar: "٧:٣٠ م" },
       title: { en: "Engagement Ceremony", ar: "حفل الخطوبة" },
       description: {
         en: "The ring exchange and the beginning of a beautiful journey",
@@ -51,7 +51,7 @@ export const weddingConfig = {
       },
     },
     {
-      time: { en: "7:30 PM", ar: "٧:٣٠ م" },
+      time: { en: "8:30 PM", ar: "٨:٣٠ م" },
       title: { en: "Photos & Celebration", ar: "صور واحتفال" },
       description: {
         en: "Capture memories from this special occasion",
@@ -59,7 +59,7 @@ export const weddingConfig = {
       },
     },
     {
-      time: { en: "8:00 PM", ar: "٨:٠٠ م" },
+      time: { en: "9:00 PM", ar: "٩:٠٠ م" },
       title: { en: "Dinner & Music", ar: "عشاء وموسيقى" },
       description: {
         en: "Dinner, music, and dancing with family and friends",
@@ -137,9 +137,9 @@ export const weddingConfig = {
     const venue = encodeURIComponent(
       locale === "ar"
         ? weddingConfig.venue.name.ar
-        : weddingConfig.venue.name.en
+        : weddingConfig.venue.name.en,
     );
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260417T160000Z/20260417T220000Z&location=${venue}`;
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260417T170000Z/20260417T230000Z&location=${venue}`;
   },
 } as const;
 
