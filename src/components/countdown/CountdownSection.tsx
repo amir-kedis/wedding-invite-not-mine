@@ -76,13 +76,18 @@ export default function CountdownSection() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-    setTime(getTimeRemaining(weddingConfig.date));
+    const timeout = window.setTimeout(() => {
+      setIsMounted(true);
+      setTime(getTimeRemaining(weddingConfig.date));
+    }, 0);
     
     const interval = setInterval(() => {
       setTime(getTimeRemaining(weddingConfig.date));
     }, 1000);
-    return () => clearInterval(interval);
+    return () => {
+      window.clearTimeout(timeout);
+      clearInterval(interval);
+    };
   }, []);
 
   return (

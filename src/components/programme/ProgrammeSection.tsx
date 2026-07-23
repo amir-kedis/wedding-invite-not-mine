@@ -9,7 +9,7 @@ export default function ProgrammeSection() {
   const events = weddingConfig.schedule;
 
   return (
-    <section className="section-padding bg-background">
+    <section id="programme" className="section-padding bg-background">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-script-family)] text-4xl md:text-5xl text-sage-dark mb-2">

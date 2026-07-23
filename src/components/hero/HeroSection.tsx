@@ -27,8 +27,9 @@ export default function HeroSection() {
           day: "numeric",
         });
 
-  const scrollToRsvp = () => {
-    document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToDetails = () => {
+    const targetId = weddingConfig.sections.programme ? "programme" : "details";
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -93,7 +94,7 @@ export default function HeroSection() {
 
       {/* Scroll CTA */}
       <button
-        onClick={scrollToRsvp}
+        onClick={scrollToDetails}
         className="absolute bottom-8 inset-x-0 z-10 flex flex-col items-center gap-2 text-center text-primary-foreground hover:text-primary-foreground/80 transition-colors cursor-pointer"
       >
         <span className="text-xs tracking-[0.3em] rtl:tracking-normal uppercase font-sans">

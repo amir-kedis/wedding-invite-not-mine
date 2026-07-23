@@ -16,54 +16,80 @@ export interface ScheduleEvent {
   description: LocalizedString;
 }
 
+export interface WeddingLocation {
+  kind: LocalizedString;
+  name: LocalizedString;
+  time: LocalizedString;
+  address: LocalizedString;
+  mapsUrl: string;
+  embedUrl: string;
+}
+
+const churchMapsUrl =
+  "https://www.google.com/maps/place/%D9%83%D9%86%D9%8A%D8%B3%D8%A9+%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%AF+%D8%A7%D9%84%D8%B9%D8%B8%D9%8A%D9%85+%D8%A7%D8%A8%D9%89+%D8%B3%D9%8A%D9%81%D9%8A%D9%86+%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D9%86,+5+%D8%A7%D9%84%D8%AD%D8%AC%D8%A7%D8%B2%D8%8C+%D8%AC%D8%B2%D9%8A%D8%B1%D8%A9+%D9%85%D9%8A%D8%AA+%D8%B9%D9%82%D8%A8%D8%A9%D8%8C+%D8%AD%D9%8A+%D8%A7%D9%84%D8%B9%D8%AC%D9%88%D8%B2%D8%A9%D8%8C+%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9+%D8%A7%D9%84%D8%AC%D9%8A%D8%B2%D8%A9+3752240%E2%80%AD/data=!4m2!3m1!1s0x1458410054336035:0x427276b572702848?entry=gps&coh=192189&g_ep=CAESBzI1LjI3LjQYACDXggMqWyw5NDI2NzcyNywxMDA4MjA2OTEsOTQyODA1NzYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsOTQyNzk2MTlCAkVH&skid=2f0b7787-c96c-43fb-a725-6d8c718831bb&g_st=aw";
+
+const receptionMapsUrl =
+  "https://www.google.com/maps?q=30.1278819,31.1930786&z=17&hl=en";
+
 export const weddingConfig = {
   couple: {
-    partner1: { en: "Ramez", ar: "رامز" },
-    partner2: { en: "Basma", ar: "بسمة" },
+    partner1: { en: "Gerges", ar: "جرجس" },
+    partner2: { en: "Marina", ar: "مارينا" },
   },
 
   /** ISO 8601 date string with timezone */
-  date: "2026-04-17T19:00:00+02:00",
+  date: "2026-09-10T17:00:00+03:00",
 
   venue: {
-    name: { en: "Gold Nile", ar: "جولد النيل" },
-    time: { en: "From 7:00 PM onwards", ar: "من ٧:٠٠ م فصاعدًا" },
-    mapsUrl: "https://maps.app.goo.gl/nTjZhXvd4jzQFZdN9",
+    name: { en: "Villa Saudi", ar: "ڤيلا سعودي" },
+    time: { en: "7:00 PM", ar: "٧:٠٠ م" },
+    mapsUrl: receptionMapsUrl,
     embedUrl:
-      "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3450.777190417625!2d31.192062377929688!3d30.129188537597656!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14586be319fb4cbf%3A0x843d67626b087a10!2z2YTZiNmD2YrYtNmGINis2YjZhNivINmG2KfZitmE!5e0!3m2!1sen!2seg!4v1775221939519!5m2!1sen!2seg",
+      "https://www.google.com/maps?q=30.1278819,31.1930786&z=17&output=embed",
   },
+
+  locations: [
+    {
+      kind: { en: "Ceremony", ar: "الإكليل" },
+      name: { en: "El Eklil Church", ar: "كنيسة الاكليل" },
+      time: { en: "5:00 PM", ar: "٥:٠٠ م" },
+      address: {
+        en: "St. Mercurius Church, Mohandessin",
+        ar: "كنيسة الشهيد العظيم أبي سيفين، المهندسين",
+      },
+      mapsUrl: churchMapsUrl,
+      embedUrl:
+        "https://www.google.com/maps?q=%D9%83%D9%86%D9%8A%D8%B3%D8%A9+%D8%A7%D9%84%D8%A7%D9%83%D9%84%D9%8A%D9%84+%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D9%86&output=embed",
+    },
+    {
+      kind: { en: "Reception", ar: "القاعة" },
+      name: { en: "Villa Saudi", ar: "ڤيلا سعودي" },
+      time: { en: "7:00 PM", ar: "٧:٠٠ م" },
+      address: {
+        en: "Nile Corniche - 500 meters after Warraq Ring Road exit",
+        ar: "كورنيش النيل – بعد ٥٠٠ متر من نزلة دائري الوراق",
+      },
+      mapsUrl: receptionMapsUrl,
+      embedUrl:
+        "https://www.google.com/maps?q=30.1278819,31.1930786&z=17&output=embed",
+    },
+  ] as WeddingLocation[],
 
   schedule: [
     {
+      time: { en: "5:00 PM", ar: "٥:٠٠ م" },
+      title: { en: "Wedding Ceremony", ar: "الإكليل" },
+      description: {
+        en: "The wedding ceremony at El Eklil Church",
+        ar: "صلوات الإكليل في كنيسة الاكليل",
+      },
+    },
+    {
       time: { en: "7:00 PM", ar: "٧:٠٠ م" },
-      title: { en: "Guest Arrival", ar: "وصول الضيوف" },
+      title: { en: "Reception", ar: "القاعة" },
       description: {
-        en: "Welcome and reception at the venue",
-        ar: "استقبال وترحيب في القاعة",
-      },
-    },
-    {
-      time: { en: "7:30 PM", ar: "٧:٣٠ م" },
-      title: { en: "Engagement Ceremony", ar: "حفل الخطوبة" },
-      description: {
-        en: "The ring exchange and the beginning of a beautiful journey",
-        ar: "تبادل الخواتم وبداية رحلة جميلة",
-      },
-    },
-    {
-      time: { en: "8:30 PM", ar: "٨:٣٠ م" },
-      title: { en: "Photos & Celebration", ar: "صور واحتفال" },
-      description: {
-        en: "Capture memories from this special occasion",
-        ar: "التقاط ذكريات من هذه المناسبة الرائعة",
-      },
-    },
-    {
-      time: { en: "9:00 PM", ar: "٩:٠٠ م" },
-      title: { en: "Dinner & Music", ar: "عشاء وموسيقى" },
-      description: {
-        en: "Dinner, music, and dancing with family and friends",
-        ar: "عشاء وموسيقى ورقص مع العائلة والأصدقاء",
+        en: "Celebration at Villa Saudi",
+        ar: "الاحتفال في ڤيلا سعودي",
       },
     },
   ] as ScheduleEvent[],
@@ -73,10 +99,10 @@ export const weddingConfig = {
     envelope: true,
     hero: true,
     countdown: true,
-    programme: false,
+    programme: true,
     details: true,
     dressCode: false,
-    rsvp: true,
+    rsvp: false,
     guestbook: false,
     music: false,
   },
@@ -133,13 +159,13 @@ export const weddingConfig = {
       locale === "ar"
         ? `${c.partner1.ar} و ${c.partner2.ar}`
         : `${c.partner1.en} & ${c.partner2.en}`;
-    const title = encodeURIComponent(`Engagement — ${name}`);
-    const venue = encodeURIComponent(
+    const title = encodeURIComponent(`Wedding — ${name}`);
+    const location = encodeURIComponent(
       locale === "ar"
-        ? weddingConfig.venue.name.ar
-        : weddingConfig.venue.name.en,
+        ? `${weddingConfig.locations[0].name.ar} ثم ${weddingConfig.locations[1].name.ar}`
+        : `${weddingConfig.locations[0].name.en}, then ${weddingConfig.locations[1].name.en}`,
     );
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260417T170000Z/20260417T230000Z&location=${venue}`;
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20260910T140000Z/20260910T210000Z&location=${location}`;
   },
 } as const;
 
