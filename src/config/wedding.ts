@@ -51,7 +51,10 @@ export const weddingConfig = {
   locations: [
     {
       kind: { en: "Ceremony", ar: "الإكليل" },
-      name: { en: "El Eklil Church", ar: "كنيسة الاكليل" },
+      name: {
+        en: "St. Mercurius Church, Mohandessin",
+        ar: "كنيسة الشهيد العظيم أبي سيفين، المهندسين",
+      },
       time: { en: "5:00 PM", ar: "٥:٠٠ م" },
       address: {
         en: "St. Mercurius Church, Mohandessin",
@@ -80,8 +83,8 @@ export const weddingConfig = {
       time: { en: "5:00 PM", ar: "٥:٠٠ م" },
       title: { en: "Wedding Ceremony", ar: "الإكليل" },
       description: {
-        en: "The wedding ceremony at El Eklil Church",
-        ar: "صلوات الإكليل في كنيسة الاكليل",
+        en: "The wedding ceremony at St. Mercurius Church, Mohandessin",
+        ar: "صلوات الإكليل في كنيسة الشهيد العظيم أبي سيفين، المهندسين",
       },
     },
     {
